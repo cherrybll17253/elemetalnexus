@@ -56,7 +56,7 @@ public class playermovement : MonoBehaviour
         else if(onWall() && !isGrounded()){
             wallJumpCooldown = 0;
             
-            body.velocity = new Vector2(body.velocity.x, jumpPower);
+            body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpPower);
             print("Walljump triggered");
         }
     }
