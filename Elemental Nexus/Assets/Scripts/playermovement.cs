@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = Vector2.zero;
             }
             else
-                body.gravityScale = 1;
+                body.gravityScale = 2;
 
             if (Input.GetKey(KeyCode.Space))
                 Jump();
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
             else
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpPower);
+                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpPower/2);
 
             wallJumpCooldown = 0;
         }
